@@ -97,6 +97,19 @@ class TestErrors(unittest.TestCase):
         assert code.printer == Printer.COREONE
 
 
+    def test_COREONE_OAK(self):
+        """Oak is a Core One variant and inherits all its codes."""
+        code = PrinterCodes.get(f"{Printer.COREONE_OAK:02d}701")
+        assert code.printer == Printer.COREONE_OAK
+        assert code.category == Category(7)
+        assert code.error == 1
+        assert code.title
+        assert code.message
+        assert code.id
+        # common code for buddy printers
+        code = PrinterCodes.get(f"{Printer.COREONE_OAK:02d}801")
+        assert code.printer == Printer.COREONE_OAK
+
     def test_no_MK35S(self):
         """MK35S doesn't have puppies."""
         code = PrinterCodes.get("28512")
