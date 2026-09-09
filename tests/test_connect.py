@@ -23,6 +23,21 @@ class TestErrors(unittest.TestCase):
         assert code.message
         assert code.id
 
+    def test_XLP(self):
+        """XLP inherits XL-only common codes (XX102 is XL only)."""
+        code = PrinterCodes.get(f"{Printer.XLP:02d}102")
+        assert code.printer == Printer.XLP
+        assert code.category == Category(1)
+        assert code.error == 2
+        assert code.title
+        assert code.message
+        assert code.id
+        # XX814 lists MK4 and XL together; XLP must still get it
+        code = PrinterCodes.get(f"{Printer.XLP:02d}814")
+        assert code.printer == Printer.XLP
+        assert code.category == Category(8)
+        assert code.error == 14
+
     def test_MK4(self):
         code = PrinterCodes.get("13505")
         assert code.printer == Printer.MK4

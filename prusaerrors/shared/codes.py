@@ -30,6 +30,7 @@ class Printer(IntEnum):
     MK4 = 0x000D
     IX = 0x0010
     XL = 0x0011
+    XLP = 0x0029
     MK39 = 0x0015
     MK35 = 0x0017
     MK4S = 0x001A

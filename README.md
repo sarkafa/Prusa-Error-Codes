@@ -26,6 +26,10 @@ Example: 12201
 * 28 `MK3.5S` - Original Prusa MK3.5S
 * 29 `M1` - Original Medical One
 * 31 `COREONE` - Prusa Core One
+* 35 `COREONEL` - Prusa Core One L
+* 36 `COREONE_INDX` - Prusa Core One with INDX
+* 37 `COREONEL_INDX` - Prusa Core One L with INDX
+* 41 `XLP` - Prusa XL+
 
 ## Error categories
 1. Mechanical - XYZ motors, tower, axis range
